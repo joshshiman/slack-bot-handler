@@ -2,7 +2,7 @@
 import requests
 import json
 
-with open('webhookURL.txt.gitignore') as f:
+with open('webhookURL.txt') as f:
     webhookURL = f.read()
 
 with open('slackMessage.json') as f:
