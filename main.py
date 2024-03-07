@@ -2,8 +2,7 @@
 import requests
 import json
 
-with open('webhookURL.txt') as f:
-    webhookURL = f.read()
+webhookURL = input('What is the webhook URL \n >')
 
 with open('slackMessage.json') as f:
    slackMessage = json.load(f)
