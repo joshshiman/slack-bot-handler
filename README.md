@@ -8,7 +8,7 @@ OPTIONAL: AWS Prerequisites:
 
 Install Python and Git
 
-`sudo yum install python 3`
+`sudo yum install python3`
 
 `sudo yum install python3-pip`
 
@@ -16,9 +16,20 @@ Install Python and Git
 
 Clone the repostiory by running this in the terminal
 
-`https://github.com/joshshiman/SlackBotHandler`
+`git clone https://github.com/joshshiman/SlackBotHandler.git`
+
+Change directories to project
+
+`cd SlackBotHandler`
 
 Next install all dependencies
 
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 
+Create a `.env` file
+
+`touch .env`
+
+Add secret to your `.env` file
+
+`echo SECRET = "your secret here"`

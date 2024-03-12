@@ -49,3 +49,6 @@ if __name__ == '__main__':
 
 # Test
 #curl -X POST -H "Content-Type: application/json" -d '{"text":"{\"blocks\":[{\"type\":\"section\",\"text\":{\"type\":\"mrkdwn\",\"text\":\"Hello, World!\"}}]}" }' http://localhost:5000/slack
+
+# Windows Test
+# Invoke-WebRequest -Uri "http://localhost:5000/slack" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"text":{"blocks":[{"type":"section","text":{"type":"mrkdwn","text":"Hello, World!"}}]}}'
