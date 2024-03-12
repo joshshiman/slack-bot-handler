@@ -1,24 +1,44 @@
-# This will handle scheduling and sending Slack messages
-
 # Imports
 import requests
 import json
+from flask import Flask, request
+from dotenv import load_dotenv, dotenv_values
+import os
+
+# Initialize Flask app
+app = Flask(__name__)
+
+# Global variable to store incoming Slack message
+slackMessage = None
 
 # WebhookURL secret
-webhookURL = input('What is the webhook URL \n >')
+load_dotenv()
+webhookURL = (os.getenv("SECRET"))
 
-# Read JSON message data
-with open('slackMessage.json') as f:
-   slackMessage = json.load(f)
+# Endpoint to receive Slack messages
+@app.route('/slack', methods=['POST'])
+def receive_slack_message():
+    global slackMessage
+    slackMessage = request.json
+    return 'Received Slack message successfully', 200
 
-# curl request function
-def curl_request(message, webhook):
-    r = requests.post(webhook, json= message)
-    r.status_code
+# Function to send Slack message
+def send_slack_message(message):
+    if webhookURL:
+        r = requests.post(webhookURL, json=message)
+        return r.status_code
+    else:
+        return 'Webhook URL is not provided'
 
-# Make a curl request to webhookURL
-response = curl_request(slackMessage, webhookURL)
+# Example usage: Sending the stored Slack message
+def send_stored_message():
+    global slackMessage
+    if slackMessage:
+        response = send_slack_message(slackMessage)
+        print(response)
+    else:
+        print("No Slack message received yet")
 
-# Make a curl request to webhookURL
-print(response)
-
+if __name__ == '__main__':
+    # Run Flask app in debug mode
+    app.run(debug=True)
