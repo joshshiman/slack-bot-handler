@@ -19,8 +19,11 @@ webhookURL = (os.getenv("SECRET"))
 @app.route('/slack', methods=['POST'])
 def receive_slack_message():
     global slackMessage
-    slackMessage = request.json
-    return 'Received Slack message successfully', 200
+    slackMessage = request.json.get('text', None)
+    if slackMessage:
+        return 'Received Slack message successfully', 200
+    else:
+        return 'No message received', 400
 
 # Function to send Slack message
 def send_slack_message(message):
@@ -39,12 +42,7 @@ def send_stored_message():
     else:
         print("No Slack message received yet")
 
-'''
+
 if __name__ == '__main__':
     # Run Flask app in debug mode
     app.run(debug=True)
-'''
-
-if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
