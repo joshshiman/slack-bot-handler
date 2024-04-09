@@ -2,9 +2,9 @@
 Intended for scheduling, and delivering formatted Slack Messages
 
 
-### Getting Started
+## Getting Started
 
-**OPTIONAL: AWS Prerequisites:**
+### OPTIONAL: AWS Prerequisites
 
 Install Python and Git
 
