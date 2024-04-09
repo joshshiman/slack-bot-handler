@@ -1,35 +1,29 @@
 # SlackBotHandler
 Intended for scheduling, and delivering formatted Slack Messages
 
-
 ## Getting Started
 
-### OPTIONAL: AWS Prerequisites
+1. First ensure that you have Python and Git installed
 
-Install Python and Git
+- `sudo install python3`
+- `sudo install git-all`
 
-`sudo yum install python3`
+2. Clone the repostiory by running this in the terminal
 
-`sudo yum install python3-pip`
+- `git clone https://github.com/joshshiman/SlackBotHandler.git`
 
-`sudo yum install git-all`
+3. Navigate to the project directory
 
-Clone the repostiory by running this in the terminal
+- `cd SlackBotHandler`
 
-`git clone https://github.com/joshshiman/SlackBotHandler.git`
-
-Change directories to project
-
-`cd SlackBotHandler`
-
-Next install all dependencies
+4. Next install all dependencies
 
 `pip3 install -r requirements.txt`
 
-Create a `.env` file
+5. Create a `.env` file
 
-`touch .env`
+- `touch .env`
 
-Add secret to your `.env` file
+6. Add webhook to your `.env` file
 
-`echo SECRET = "your secret here"`
+- `echo SLACK_WEBHOOK_URL={your secret here}`
