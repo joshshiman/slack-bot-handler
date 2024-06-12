@@ -1,4 +1,4 @@
-# SlackBotHandler
+# Slack Bot Handler
 Intended for scheduling, and delivering formatted Slack Messages
 
 ## Getting Started
