@@ -18,7 +18,7 @@ Intended for scheduling, and delivering formatted Slack Messages
 
 4. Next install all dependencies
 
-`pip3 install -r requirements.txt`
+`sudo pip3 install -r requirements.txt`
 
 5. Create a `.env` file
 
@@ -27,3 +27,7 @@ Intended for scheduling, and delivering formatted Slack Messages
 6. Add webhook to your `.env` file
 
 - `echo SLACK_WEBHOOK_URL={your secret here}`
+
+7. Run the server
+
+- `app.py`
