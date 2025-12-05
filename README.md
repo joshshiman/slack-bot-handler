@@ -1,4 +1,4 @@
-# Slack Bot Handler
+# Slack Block Kit Payload Scheduler
 Intended for scheduling, and delivering formatted Slack Messages
 
 ## Getting Started
